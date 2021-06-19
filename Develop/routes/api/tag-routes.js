@@ -13,28 +13,28 @@ router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   Tag.findAll({
-    where: {id=rreq.params.id}
+    where: {id:rreq.params.id}
   })
 });
 
 router.post('/', (req, res) => {
   // create a new tag
   Tag.update({
-    where: {id=req.params.id}
+    where: {id:req.params.id}
   })
 });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update({
-    where: {id=req.params.id}
+    where: {id:req.params.id}
   })
 });
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
   Tag.destroy({
-    where: {id=req.params.id}
+    where: {id:req.params.id}
   })
 });
 
