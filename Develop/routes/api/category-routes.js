@@ -61,8 +61,8 @@ router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   Category.destroy({
     where: {id: req.params.id}
-  }).then((deleteCategoryID) => {
-    res.json(deleteCategoryID);
+  }).then((deleteCategory) => {
+    res.json({message: "tag deleted"});
   });
 });
 
