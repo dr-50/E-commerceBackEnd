@@ -13,14 +13,18 @@ router.get('/', (req, res) => {
       {
         model: Category,
         attributes: ['category_name']
-      }
-    ],
-    include: [
-      {
-        model: Tag,
-        attributes: ['tag_name']
-      }
-    ]
+      },
+     {
+       model: Tag,
+       attributes: ['tag_name']
+     }]
+    // ],
+    // include: [
+    //   {
+    //     model: Tag,
+    //     attributes: ['tag_name']
+    //   }
+    // ]
   }).then((getAllProducts) => {
     res.json(getAllProducts);
   });
