@@ -40,9 +40,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new category
 Category.create({
-  where: {
-    category_nam: req.body.category_name
-  }
+
+    category_name: req.body.category_name
+
 }).then((postCategoryID) => {
   res.json(postCategoryID);
 });
@@ -50,9 +50,16 @@ Category.create({
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-Category.update({
-  where: {id: req.params.id}
-}).then((updateCategoryID) => {
+Category.update(
+  {
+    category_name: req.body.category_name
+  },
+  {
+    where: {
+      id: req.params.id
+    }
+  }
+).then((updateCategoryID) => {
   res.json(updateCategoryID);
 });
 });
